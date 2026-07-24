@@ -1,0 +1,38 @@
+# Secrets
+.env
+
+# Personal study content and model artifacts
+vault/
+outputs/
+models/
+
+# Internal state and generated output
+pipeline/.ingest_queue.json
+graphify-out/
+
+# Research and planning docs (kept local)
+docs/
+CLAUDE.md
+for_me.md
+PREPUSH_SECRETS.md
+make_modelfile.py
+reorganise_wiki.py
+morning_digest.py
+
+# Build cache
+unsloth_compiled_cache/
+finetune/unsloth_compiled_cache/
+__pycache__/
+*.pyc
+*.egg-info/
+.ipynb_checkpoints/
+
+# Training run logs
+wandb/
+
+# OS
+.DS_Store
+Thumbs.db
+
+ingest_all.bat
+fix_and_reingest.bat

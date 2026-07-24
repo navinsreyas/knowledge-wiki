@@ -1,0 +1,38 @@
+# ============================================================
+# AI Engineering Wiki — Python dependencies
+# Python 3.13 | CUDA 13.2 driver (toolkit-compatible with 12.x)
+# RTX 4060 8GB VRAM
+# ============================================================
+
+# ------------------------------------------------------------
+# GPU STACK — install in this order before anything else:
+#
+#   pip install torch torchvision torchaudio \
+#       --index-url https://download.pytorch.org/whl/cu128
+#   pip install unsloth
+#   pip install bitsandbytes --prefer-binary
+#
+# Do NOT pin torch here — let the CUDA index resolve the build.
+# Do NOT install bitsandbytes from source; use --prefer-binary.
+# ------------------------------------------------------------
+
+# --- Training (missing from environment) ---
+unsloth>=2026.4.0
+trl>=0.16.0
+transformers>=4.51.0
+peft>=0.15.0
+accelerate>=1.6.0
+bitsandbytes>=0.45.0
+wandb>=0.19.0
+
+# --- Data pipeline (already installed) ---
+langchain-core>=0.3.0
+langchain-ollama>=1.1.0
+requests>=2.32.0
+beautifulsoup4>=4.12.0
+markdownify>=1.2.0
+pymupdf4llm>=1.27.0
+youtube-transcript-api>=1.2.0
+python-dotenv>=1.2.0
+networkx>=3.4.0
+datasets>=3.4.1,<4.4.0
