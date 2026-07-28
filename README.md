@@ -1,5 +1,7 @@
 # AI Engineering Knowledge Wiki
 
+[![tests](https://github.com/navinsreyas/knowledge-wiki/actions/workflows/tests.yml/badge.svg)](https://github.com/navinsreyas/knowledge-wiki/actions/workflows/tests.yml)
+
 A local, end-to-end pipeline that turns a self-directed AI Engineering study plan into a structured knowledge wiki, fine-tunes a model on it, and evaluates whether fine-tuning actually helps.
 
 Everything runs on consumer hardware (RTX 4060 Laptop GPU, 8GB VRAM). The project ingests PDFs, papers, YouTube transcripts, and web articles, compiles them into linked wiki articles inside an Obsidian vault, generates a synthetic question-answer dataset from that wiki, QLoRA fine-tunes Qwen2.5:7B, and runs a three-way benchmark comparing the base model, the fine-tuned model, and retrieval-augmented generation (RAG) over the wiki.

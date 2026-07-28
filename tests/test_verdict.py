@@ -4,7 +4,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from finetune.evaluate import _parse_verdict
+from finetune.verdict import _parse_verdict
 
 
 def test_correct():

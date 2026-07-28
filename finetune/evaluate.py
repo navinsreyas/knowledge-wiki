@@ -10,20 +10,10 @@ from langchain_ollama import ChatOllama
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 import config
+from finetune.verdict import _parse_verdict
 
 project_root   = Path(__file__).parent.parent
 finetuned_path = str(project_root / "outputs" / "wiki-finetuned")
-
-
-def _parse_verdict(raw: str) -> bool:
-    """Return True iff the judge replied with exactly CORRECT (case-insensitive).
-
-    Exact match prevents "CORRECT" matching inside "INCORRECT" (the original bug)
-    and rejects multi-word responses like "The answer is CORRECT" — the judge
-    prompt instructs a single-word reply, so anything else is treated as failure.
-    """
-    v = raw.strip().upper()
-    return v == "CORRECT"
 
 
 def _judge_verdict(judge: ChatOllama, question: str, expected: str, response: str) -> str:
