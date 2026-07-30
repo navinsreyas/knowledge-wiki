@@ -24,7 +24,7 @@ Verified on 42 held-out QA pairs:
 | Fine-tuned (QLoRA) | 45.2% |
 | RAG over wiki | 33.3% |
 
-The fine-tuned model underperformed the base model. Fine-tuning on a small domain dataset (326 training pairs) degraded the model's general capability — a case of catastrophic forgetting. The QLoRA result (45.2%) closely tracks a prior benchmark on a different domain (legal contracts, 45.8%), which suggests the outcome is driven by the method and data scale rather than the subject matter.
+Fine-tuning on 326 synthetic pairs reduced accuracy from 76.2% to 45.2%, consistent with catastrophic forgetting at this data scale. Single run, n=42, with the judge drawn from the same model family as the candidate — treat as directional, not conclusive.
 
 The RAG score reflects a retrieval-relevance gap, not a broken pipeline — retrieval fires and returns articles, but keyword matching pulls weakly-related articles for many queries. Upgrading to embedding-based retrieval is the obvious next step.
 
